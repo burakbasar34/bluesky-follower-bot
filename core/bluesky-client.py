@@ -36,5 +36,5 @@ class BlueskyClient:
 
     def get_following(self) -> List[str]:
         self.login()
-        result = self.client.app.bsky.graph.get_following({'actor': self.client.me.did})
+        result = self.client.app.bsky.graph.getFollowing({'actor': self.client.me.did})
         return [entry.handle for entry in result.following]
