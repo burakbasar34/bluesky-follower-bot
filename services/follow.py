@@ -18,7 +18,7 @@ def follow_likers(db: Session, user, delay: int = 5) -> int:
                 for liker in likers:
                     if liker == user.username:
                         continue
-                    if liker not in client.get_following():
+                    if liker not in client.getFollowing():
                         result = client.follow_user(liker)
                         if result:
                             db.add(FollowLog(user_id=user.id, message=f"{liker} takip edildi."))
