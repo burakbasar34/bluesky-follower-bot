@@ -6,3 +6,9 @@ DATABASE_URL = "sqlite:///./app.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
+
+# MODELLERİ BURADA IMPORT ET!
+from models import User, TargetUser, FollowLog
+
+# VE create_all BURADA ÇALIŞSIN
+Base.metadata.create_all(bind=engine)
