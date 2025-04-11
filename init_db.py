@@ -1,10 +1,7 @@
-from database import engine, Base
-from models import User, TargetUser, FollowLog
+# create_db.py
+from database import Base, engine
+from models import *
 
-def init():
-    print("Veritabanı ve tablolar oluşturuluyor...")
-    Base.metadata.create_all(bind=engine)
-    print("Tamamlandı.")
-
-if __name__ == "__main__":
-    init()
+print("Creating database...")
+Base.metadata.create_all(bind=engine)
+print("Done.")
